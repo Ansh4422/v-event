@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@600&display=swap');
+
+.great-vibes {
+    font-family: "Great Vibes", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.play {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+}
+
+body{
+    background: url("13338.jpg") no-repeat center;
+}
+
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation bar styles */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    padding: 10px 20px;
+    background: url("13338.jpg") no-repeat center;
+}
+
+nav .navbar-logo img{
+    width: 10rem;
+    margin-left: 5rem;
+}
+
+nav .navbar-menu {
+    display: flex;
+    gap: 70px;
+}
+
+nav .navbar-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav .navbar-menu a:hover {
+    color: rgb(255, 222, 6);
+    /* Light Blue */
+}
+
+/* Desktop view styles */
+nav .navbar-toggler {
+    display: none;
+    /* Hide toggle button for larger screens */
+}
+
+/* Ensure the offcanvas menu is working */
+.offcanvas {
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially hidden */
+    transition: visibility 0s, opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.offcanvas.show {
+    visibility: visible;
+    opacity: 1; /* Show the menu when active */
+}
+
+/* Mobile view styles */
+@media (max-width: 600px) {
+    nav .navbar-menu {
+        display: none;
+        /* Hide menu on small screens */
+    }
+
+    nav .navbar-logo img{
+        width: 6rem;
+        margin-left: 2rem;
+    }
+
+    nav .navbar-toggler {
+        display: block; /* Make sure it's visible on mobile */
+        font-size: 2rem;
+        background-color: rgb(255, 221, 0);
+        border-radius: 10px;
+        color: black;
+        padding: 4px 8px;
+        position: absolute; /* Position it absolutely */
+        top: 10px; /* Adjust top position if needed */
+        right: 20px; /* Align it to the right with a 20px margin */
+    }
+
+    .offcanvas-logo{
+        width: 15rem;
+    }
+
+    .offcanvas-body ul{
+        list-style-type: none;
+    }
+    .offcanvas-body ul li a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.4rem;
+        transition: 0.2s ease-in-out;
+    }
+
+    .offcanvas-body ul li a:hover{
+        color: rgb(255, 187, 0);
+    }
+
+    /* Styling for Contact Details */
+    .contact-details {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .contact-details h6 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: rgb(255, 183, 0);
+    }
+
+    .contact-details p {
+        margin: 5px 0;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        display: inline-block;
+        margin-right: 15px;
+        text-decoration: none;
+        font-size: 2rem;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+
+    .social-icon i {
+        margin-right: 8px; /* Space between icon and text */
+    }
+
+    .social-icon:hover {
+        color: #00bcd4; /* Change color on hover */
+    }
+
+    .social-icon.whatsapp:hover {
+        color: #25d366; /* WhatsApp color */
+    }
+
+    .social-icon.instagram:hover {
+        color: #e1306c; /* Instagram color */
+    }
+
+    .social-icon.call:hover {
+        color: #25d366; /* Call color */
+    }
+
+    .social-icon.youtube:hover {
+        color: #ff0000; /* YouTube color */
+    }
+}
+
+/* Header styles */
+header {
+    position: relative;
+    height: max-content;
+}
+
+/* Carousel styles */
+.header-carousel {
+    overflow: hidden;
+    position: relative;
+    height: 70vh;
+    /* Adjust height as needed */
+    margin: 0 auto;
+    padding: 0;
+}
+
+.header-carousel .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: transform 1s ease-in-out;
+    /* Smooth transition for slides */
+}
+
+.header-carousel .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Ensure image covers the element */
+}
+
+.header-carousel .item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay */
+    z-index: 5;
+    /* Ensure overlay is above image but below text */
+}
+
+/* Text within the header */
+header .text {
+    font-family: "Great Vibes", cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    /* Optional: semi-transparent background */
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+header .text h1 {
+    font-size: 4rem;
+    /* Adjust font size as needed */
+}
+
+@media only screen and (max-width: 600px){
+     /* Adjust header height for mobile view */
+     header {
+        height: auto;
+        padding: 0; /* Remove any default padding */
+    }
+
+    /* Adjust the text positioning inside header */
+    header .text {
+        top: 50%; /* Move the text closer to the top of the screen */
+    }
+
+    header .text h1 {
+        font-size: 1.5rem; /* Adjust the font size for mobile */
+    }
+
+    header .text p {
+        font-size: 10px; /* Adjust the font size for mobile */
+    }
+
+    .header-carousel {
+        height: auto;
+    }
+
+    /* Adjust the image height in the carousel */
+    .header-carousel .item img {
+        height: 40vh; /* Ensure it's not too tall */
+    }
+
+    /* Ensure no space before the About section */
+    #about {
+        margin-top: 0;
+    }
+}
+
+/* About Us Section Styles */
+.about-us-section {
+    text-align: justify;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Subtle gradient background */
+    padding: 2rem 4rem; /* Add padding for breathing space */
+    border-radius: 15px; /* Rounded corners for a modern feel */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft box-shadow */
+    margin-top: 40px; /* Space above the section */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.about-us-section:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    color: black;
+    font-weight: 700;
+    margin-bottom: 20px; /* Space below the title */
+    text-transform: uppercase; /* Uppercase text for modern look */
+    letter-spacing: 1px; /* Slight letter spacing */
+}
+
+.section-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; /* Slightly larger for better readability */
+    color: black;
+    line-height: 1.8; /* Increase line height for readability */
+    max-width: 700px;
+    margin: 0 auto; /* Center the text */
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    max-width: 100%; /* Ensure image is responsive */
+    border-radius: 10px; /* Rounded corners on image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow around image */
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 768px) {
+    .about-us-section {
+        padding: 30px 15px; /* Reduce padding on smaller screens */
+    }
+
+    .section-title {
+        font-size: 2rem; /* Slightly smaller title on mobile */
+    }
+
+    .section-description {
+        font-size: 1rem; /* Smaller text for mobile */
+    }
+
+    .about-image {
+        margin-top: 20px; /* Add some space above image */
+        max-height: 300px; /* Limit image height */
+    }
+
+    .row {
+        text-align: center; /* Center align text on mobile */
+    }
+}
+
+.about .col-md-6 img{
+    width: 100%;
+}
+
+.social a i{
+    font-size: 5rem;
+    padding: 10px;
+}
+
+.social a{
+    transition: 0.3s ease-in-out;
+}
+
+.social a:hover{
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px rgb(255, 174, 0));
+}
+
+footer {
+    background: url("header/2.jpg") no-repeat center center/cover; /* Ensures the image covers the footer properly */
+    position: relative; /* Required for the overlay */
+    backdrop-filter: blur(10px); /* Applies blur to the background image */
+    color: white; /* Ensures text is visible */
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+    z-index: 1; /* Ensures the overlay stays behind the content */
+}
+
+footer .container {
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
+}
